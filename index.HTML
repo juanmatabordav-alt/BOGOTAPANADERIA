@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Bogotá Panadería</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#2b140c;
+    color:white;
+    overflow-x:hidden;
+}
+
+:root{
+    --brown:#3A1F13;
+    --brown2:#4e2617;
+    --orange:#E08E22;
+    --white:#FFFFFF;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    background:#3A1F13;
+    padding:16px 60px;
+    position:sticky;
+    top:0;
+    z-index:999;
+    border-bottom:2px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    max-width:1450px;
+    margin:auto;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+    position:relative;
+    letter-spacing:.5px;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-7px;
+    background:var(--orange);
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--orange);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    min-height:95vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(to right,
+    rgba(32,12,5,.96) 0%,
+    rgba(32,12,5,.86) 35%,
+    rgba(32,12,5,.42) 70%,
+    rgba(32,12,5,.18) 100%),
+    url('Desayuno.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:1450px;
+    width:100%;
+    margin:auto;
+    padding:0 70px;
+}
+
+.hero-box{
+    max-width:760px;
+}
+
+.hero h1{
+    font-size:78px;
+    line-height:1.02;
+    margin-bottom:28px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.hero p{
+    color:#f2dfd4;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:40px;
+    max-width:620px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    background:var(--orange);
+    color:white;
+    padding:18px 42px;
+    border-radius:8px;
+    font-weight:700;
+    transition:.25s;
+    border:2px solid transparent;
+    letter-spacing:.5px;
+}
+
+.hero-btn:hover{
+    background:#c97710;
+    border-color:white;
+    transform:translateY(-3px);
+}
+
+.hero-btn.secondary{
+    background:transparent;
+    border:2px solid rgba(255,255,255,.25);
+}
+
+.hero-btn.secondary:hover{
+    background:white;
+    color:var(--brown);
+}
+
+/* ================= INFO STRIP ================= */
+
+.info-strip{
+    width:100%;
+    background:var(--orange);
+    padding:22px 50px;
+}
+
+.info-wrapper{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.info-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.info-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    flex-shrink:0;
+}
+
+.info-card h4{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.info-card p{
+    font-size:13px;
+    opacity:.95;
+    line-height:1.5;
+}
+
+/* ================= MENU ================= */
+
+.menu{
+    position:relative;
+    padding:100px 60px;
+    background:
+    radial-gradient(circle at top left, rgba(255,255,255,.03), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,.03), transparent 30%),
+    #3A1F13;
+}
+
+.menu::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+}
+
+.section-title{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:82px;
+    color:var(--orange);
+    font-weight:600;
+    line-height:1;
+}
+
+.section-title p{
+    margin-top:14px;
+    color:#f2dfd4;
+    font-size:17px;
+}
+
+.menu-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    max-width:1500px;
+    margin:auto;
+}
+
+.card{
+    background:#4b2315;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+    box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 28px 50px rgba(0,0,0,.35);
+}
+
+.card-image{
+    position:relative;
+    height:330px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,.55), transparent 60%);
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-title{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--orange);
+    font-size:34px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.card-text{
+    color:#f0ddd2;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.price{
+    margin-top:22px;
+    color:#ffbf5b;
+    font-size:24px;
+    font-weight:700;
+}
+
+.card-btn{
+    margin-top:22px;
+    display:inline-block;
+    background:var(--orange);
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.card-btn:hover{
+    background:#c97710;
+    transform:translateY(-2px);
+}
+
+/* ================= SPECIAL ================= */
+
+.special{
+    padding:90px 60px;
+    background:
+    linear-gradient(rgba(30,12,5,.88), rgba(30,12,5,.88)),
+    url('Cocteles.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+.special-wrapper{
+    max-width:1450px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 450px;
+    gap:60px;
+    align-items:center;
+}
+
+.special-left h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:88px;
+    color:var(--orange);
+    line-height:1;
+    margin-bottom:24px;
+}
+
+.special-left p{
+    color:#f2dfd4;
+    line-height:1.9;
+    font-size:18px;
+    max-width:720px;
+}
+
+.features{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.feature{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:24px;
+}
+
+.feature h4{
+    color:#ffbe56;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.feature p{
+    font-size:14px;
+    line-height:1.7;
+    color:#f2dfd4;
+}
+
+.special-image img{
+    width:100%;
+    border-radius:28px;
+    border:4px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 45px rgba(0,0,0,.35);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    padding:100px 60px;
+    background:#2b140c;
+}
+
+.gallery-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.gallery-title h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--orange);
+    font-size:78px;
+}
+
+.gallery-grid{
+    max-width:1450px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:24px;
+    border:2px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+.gallery-label{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+    background:rgba(0,0,0,.7);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#220f08;
+}
+
+.footer-top{
+    padding:70px 60px;
+    display:grid;
+    grid-template-columns:340px 1fr 430px;
+    gap:50px;
+    max-width:1450px;
+    margin:auto;
+}
+
+.footer-brand img{
+    width:220px;
+}
+
+.footer-brand p{
+    margin-top:24px;
+    color:#dbc8be;
+    line-height:1.9;
+}
+
+.footer-contact h3{
+    color:var(--orange);
+    font-size:46px;
+    margin-bottom:30px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.contact{
+    display:flex;
+    gap:18px;
+    margin-bottom:26px;
+}
+
+.contact-icon{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--orange);
+    font-size:22px;
+    flex-shrink:0;
+}
+
+.contact h4{
+    margin-bottom:6px;
+}
+
+.contact p{
+    color:#d9c6bc;
+    line-height:1.7;
+}
+
+.footer-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.footer-gallery img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.footer-bottom{
+    background:var(--orange);
+    padding:20px 60px;
+    text-align:center;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1250px){
+
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .special-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+    }
+
+    .info-wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+}
+
+@media(max-width:780px){
+
+    header{
+        padding:18px 24px;
+    }
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+        gap:18px;
+    }
+
+    .hero-content{
+        padding:0 24px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .menu{
+        padding:70px 24px;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:58px;
+    }
+
+    .gallery{
+        padding:70px 24px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .special{
+        padding:70px 24px;
+    }
+
+    .special-left h2{
+        font-size:58px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-top{
+        padding:60px 24px;
+    }
+
+    .footer-bottom{
+        padding:22px 24px;
+    }
+
+    .info-strip{
+        padding:22px 24px;
+    }
+
+    .info-wrapper{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#inicio" class="logo">
+            <img src="logo.png" alt="Logo Bogotá">
+        </a>
+
+        <nav>
+            <a href="#inicio">INICIO</a>
+            <a href="#menu">COMBOS Y ESPECIALES</a>
+            <a href="#special">BEBIDAS ESPECIALES</a>
+            <a href="#footer">SEDE Y CONTACTO</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="hero-box">
+
+            <h1>
+                SABOR Y TRADICIÓN DE BOGOTÁ EN TU MESA
+            </h1>
+
+            <p>
+                Desayunos colombianos, bebidas especiales, panadería artesanal y recetas tradicionales preparadas con calidad y tradición desde 1999.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="hero-btn">
+                    VER MENÚ
+                </a>
+
+                <a href="https://wa.me/573059255013" target="_blank" class="hero-btn secondary">
+                    PEDIR DOMICILIO
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="info-strip">
+
+    <div class="info-wrapper">
+
+        <div class="info-card">
+
+            <div class="info-icon">☕</div>
+
+            <div>
+                <h4>Bebidas Especiales</h4>
+                <p>Capuchinos, chocolate y bebidas artesanales.</p>
+            </div>
+
+        </div>
+
+        <div class="info-card">
+
+            <div class="info-icon">🥐</div>
+
+            <div>
+                <h4>Pan Artesanal</h4>
+                <p>Pan fresco y productos recién horneados todos los días.</p>
+            </div>
+
+        </div>
+
+        <div class="info-card">
+
+            <div class="info-icon">🍳</div>
+
+            <div>
+                <h4>Desayunos</h4>
+                <p>Huevos, caldos y recetas tradicionales colombianas.</p>
+            </div>
+
+        </div>
+
+        <div class="info-card">
+
+            <div class="info-icon">🛵</div>
+
+            <div>
+                <h4>Domicilios</h4>
+                <p>Servicio rápido y caliente para disfrutar en casa.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="menu" id="menu">
+
+    <div class="section-title">
+
+        <h2>Combos & Especialidades</h2>
+
+        <p>
+            ¡DISFRUTA DE NUESTRO MENÚ A CUALQUIER HORA DEL DÍA!
+        </p>
+
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="Cafe.jpeg" alt="Cafe">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="card-content">
+
+                <h3 class="card-title">
+                    Capuchinos Especiales
+                </h3>
+
+                <p class="card-text">
+                    Cremosos cappuccinos con espuma suave y presentación artesanal.
+                </p>
+
+
+                <a href="https://wa.me/573059255013" target="_blank" class="card-btn">
+                    Pedir Ahora
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="Cocteles.jpg" alt="Cocteles">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="card-content">
+
+                <h3 class="card-title">
+                    Sodas Italianas
+                </h3>
+
+                <p class="card-text">
+                    Bebidas frutales refrescantes con sabores tropicales y hielo.
+                </p>
+
+
+                <a href="https://wa.me/573059255013" target="_blank" class="card-btn">
+                    Pedir Ahora
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="Migao.jpg" alt="Migao">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="card-content">
+
+                <h3 class="card-title">
+                    Migao Tradicional
+                </h3>
+
+                <p class="card-text">
+                    Chocolate caliente con pan, queso y galletas tradicionales.
+                </p>
+
+                <a href="https://wa.me/573059255013" target="_blank" class="card-btn">
+                    Pedir Ahora
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="Desayuno2.jpeg" alt="Desayuno">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="card-content">
+
+                <h3 class="card-title">
+                    Desayuno Tradicional
+                </h3>
+
+                <p class="card-text">
+                    Caldo de costilla, chocolate caliente y desayuno colombiano completo.
+                </p>
+
+                <a href="https://wa.me/573059255013" target="_blank" class="card-btn">
+                    Pedir Ahora
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="special" id="special">
+
+    <div class="special-wrapper">
+
+        <div class="special-left">
+
+            <h2>
+                Bebidas Especiales
+            </h2>
+
+            <p>
+                Disfruta sodas italianas, cappuccinos, chocolate tradicional y bebidas artesanales preparadas con ingredientes frescos y el auténtico sabor colombiano.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <h4>Chocolate Tradicional</h4>
+
+                    <p>
+                        Perfecto para acompañar pan fresco y queso caliente.
+                    </p>
+
+                </div>
+
+                <div class="feature">
+
+                    <h4>Sodas Italianas</h4>
+
+                    <p>
+                        Refrescantes mezclas de frutas y sabores tropicales.
+                    </p>
+
+                </div>
+
+                <div class="feature">
+
+                    <h4>Capuchinos</h4>
+
+                    <p>
+                        Cremosos y suaves con sabores especiales.
+                    </p>
+
+                </div>
+
+                <div class="feature">
+
+                    <h4>Domicilios</h4>
+
+                    <p>
+                        Servicio rápido en Timiza y Carvajal.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="special-image">
+            <img src="Liquido.jpg" alt="Bebidas">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="gallery">
+
+    <div class="gallery-title">
+
+        <h2>
+            Nuestra Galería
+        </h2>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="Cafe.jpeg" alt="">
+            <div class="gallery-label">Capuchinos</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Cocteles.jpg" alt="">
+            <div class="gallery-label">Sodas Italianas</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="pan.jpg" alt="">
+            <div class="gallery-label">Pan Artesanal</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Desayuno2.jpeg" alt="">
+            <div class="gallery-label">Desayunos</div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer id="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <img src="logo.png" alt="Logo Bogotá">
+
+            <p>
+                Panadería · pastelería · salón de onces. Calidad y tradición desde 1999.
+            </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>
+                VISÍTANOS EN TIMIZA Y CARVAJAL
+            </h3>
+
+            <div class="contact">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+
+                    <h4>Dirección</h4>
+
+                    <p>
+                        Cl. 40 Sur #72L 05, Bogotá
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="contact">
+
+                <div class="contact-icon">📞</div>
+
+                <div>
+
+                    <h4>WhatsApp</h4>
+
+                    <p>
+                        <a href="https://wa.me/573059255013" target="_blank" style="color:#ffbf5b; text-decoration:none;">
+                            305 925 5013
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-gallery">
+
+            <img src="Desayuno.jpg" alt="">
+            <img src="Cafe.jpeg" alt="">
+            <img src="Cocteles.jpg" alt="">
+            <img src="Migao.jpg" alt="">
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        DESDE 1999 - CALIDAD Y TRADICIÓN
+    </div>
+
+</footer>
+
+</body>
+</html>
